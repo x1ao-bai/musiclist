@@ -7,21 +7,30 @@ body {
 */
 
 /* 背景网络图片设置*/
+/* 1. 默认情况（电脑/平板等大屏幕）显示图片一 */
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
+  background-color: #fafafa;
+
+  /* 设置电脑版背景图 */
+  background-image: url('https://pic1.imgdb.cn/item/64252b2da682492fcce95764.jpg'); /* <--- 这里填电脑图片的路径 */
   
-  /* --- 背景图片设置开始 --- */
-  /* 这里我放了一张风景图的链接，你可以换成你喜欢的图片网址 */
-  background-image: url('https://pic1.imgdb.cn/item/64252b2da682492fcce95764.jpg');
-  
-  /* 让图片铺满屏幕，不重复 */
+  /* 通用设置：让图片铺满、居中、不随滚动条滚动 */
   background-size: cover;
-  /* 让图片居中 */
   background-position: center;
-  /* 让背景固定不动，滚动网页时只有内容在动 */
   background-attachment: fixed;
-  /* --- 背景图片设置结束 --- */
+}
+
+/* 2. 媒体查询：专门针对手机屏幕（宽度小于 768px） */
+@media (max-width: 768px) {
+  body {
+    /* 这里强制覆盖上面的设置，换成手机版图片 */
+    background-image: url('https://pic1.imgdb.cn/item/65f2b9c79f345e8d03421366.jpg'); /* <--- 这里填手机图片的路径 */
+    
+    /* 手机上通常不需要 padding 太多，可以稍微改小点 */
+    padding: 10px;
+  }
 }
 
 /* 背景本地图片设置 */
@@ -159,4 +168,5 @@ h1 {
 .highlight-song {
   animation: flashHighlight 1.5s ease-out forwards;
   border-left: 4px solid #ff9800 !important; /* 左侧加个橙条标记 */
+
 }
