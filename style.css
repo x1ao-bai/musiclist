@@ -26,7 +26,7 @@ body {
 @media (max-width: 768px) {
   body {
     /* 这里强制覆盖上面的设置，换成手机版图片 */
-    background-image: url('https://pic1.imgdb.cn/item/65f2b9c79f345e8d03421366.jpg'); /* <--- 这里填手机图片的路径 */
+    background-image: url('https://pic1.imgdb.cn/item/65f2b9c79f345e8d03421366.jpg')!important; /* <--- 这里填手机图片的路径 */
     
     /* 手机上通常不需要 padding 太多，可以稍微改小点 */
     padding: 10px;
@@ -170,3 +170,4 @@ h1 {
   border-left: 4px solid #ff9800 !important; /* 左侧加个橙条标记 */
 
 }
+
