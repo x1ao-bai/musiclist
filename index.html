@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <title>我的歌单</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>我的歌单</h1>
+
+  <div id="main">
+    <!-- 左侧：搜索与按钮面板 -->
+    <aside id="controls">
+      <div class="block">
+        <!-- <label for="fileInput">从 Excel 导入歌单（可选）</label><br> -->
+        <!-- <input type="file" id="fileInput" accept=".xlsx,.xls"> -->
+      </div>  
+
+      <div class="block">
+        <button id="randomBtn" class="action-btn">🎲 帮我选一首 (随机)</button>
+      </div>
+
+      <div class="block">
+        <input type="text" id="searchInput" placeholder="搜索歌名或歌手">
+      </div>
+
+      <div class="block">
+        <div class="label">按风格筛选</div>
+        <div id="styleButtons" class="btn-row">
+          <button class="filter-btn active" data-filter="all">全部风格</button>
+          <button class="filter-btn" data-filter="流行">流行</button>
+          <button class="filter-btn" data-filter="摇滚">摇滚</button>
+          <button class="filter-btn" data-filter="R&B">R&B</button>
+          <button class="filter-btn" data-filter="民谣">民谣</button>
+          <button class="filter-btn" data-filter="古风">古风</button>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="label">按语言筛选</div>
+        <div id="languageButtons" class="btn-row">
+          <button class="filter-btn active" data-filter="all">全部语言</button>
+          <button class="filter-btn" data-filter="国语">国语</button>
+          <button class="filter-btn" data-filter="粤语">粤语</button>
+          <button class="filter-btn" data-filter="英语">英语</button>
+          <button class="filter-btn" data-filter="日语">日语</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 右侧：歌曲展示区 -->
+    <section id="songContainer">
+      <ul id="songList"></ul>
+    </section>
+  </div>
+
+  <!-- SheetJS (用于在浏览器解析 Excel 文件) -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>

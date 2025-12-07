@@ -1,0 +1,162 @@
+/*原始简易网页背景
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #fafafa;
+}
+*/
+
+/* 背景网络图片设置*/
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  
+  /* --- 背景图片设置开始 --- */
+  /* 这里我放了一张风景图的链接，你可以换成你喜欢的图片网址 */
+  background-image: url('https://pic1.imgdb.cn/item/64252b2da682492fcce95764.jpg');
+  
+  /* 让图片铺满屏幕，不重复 */
+  background-size: cover;
+  /* 让图片居中 */
+  background-position: center;
+  /* 让背景固定不动，滚动网页时只有内容在动 */
+  background-attachment: fixed;
+  /* --- 背景图片设置结束 --- */
+}
+
+/* 背景本地图片设置 */
+/* body { */
+  /* ...其他代码不变... */
+  /* 引号里填你的图片文件名 */
+  /* background-image: url('background.jpg');  */
+  
+  /* background-size: cover; */
+  /* background-position: center; */
+  /* background-attachment: fixed; */
+/* } */
+
+
+h1 {
+  margin-bottom: 12px;
+}
+
+#main {
+  display: flex;
+  gap: 20px;
+}
+
+/* 左侧控制面板 */
+#controls {
+  width: 280px;
+  /* background: #fff;  <-- 原始白色*/
+  background: rgba(255, 255, 255, 0.55); /* 0.85 代表 85% 不透明度 */
+  backdrop-filter: blur(5px); /* 可选：增加磨砂玻璃模糊效果 */
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.06);
+}
+
+.block {
+  margin-bottom: 12px;
+}
+
+#controls input[type="text"] {
+  width: 93%;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.label {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filter-btn {
+  padding: 6px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+}
+
+.filter-btn.active {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+/* 歌曲展示区 */
+#songContainer {
+  flex: 1;
+  /* background: #fff; <-- 原始白色 */
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(5px);
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.06);
+  max-height: 70vh;
+  overflow: auto;
+}
+
+#songList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#songList li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.song-title {
+  font-weight: bold;
+}
+.song-meta {
+  font-size: 13px;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* style.css 末尾添加 */
+
+/* 随机按钮样式 */
+#randomBtn {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff9800; /* 醒目的橙色 */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+#randomBtn:hover {
+  background-color: #fb8c00;
+}
+
+#randomBtn:active {
+  transform: translateY(1px);
+}
+
+/* 选中歌曲的高亮动画 */
+@keyframes flashHighlight {
+  0% { background-color: #fff9c4; transform: scale(1.02); } /* 浅黄色放大 */
+  50% { background-color: #ffeb3b; transform: scale(1.02); } /* 黄色 */
+  100% { background-color: #fff; transform: scale(1); }
+}
+
+.highlight-song {
+  animation: flashHighlight 1.5s ease-out forwards;
+  border-left: 4px solid #ff9800 !important; /* 左侧加个橙条标记 */
+}
